@@ -1,8 +1,10 @@
-function countdown() {
-  let i = 0;
-  while (i++ < 5) {
-    console.log(`Counting ... ${i}`);
-  }
-}
+const http = require('http');
+const server = http.createServer(function (req, res) {
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+  res.write('<h1>Hello Node.js!</h1>');
+  res.end();
+});
 
-countdown();
+server.listen(8080, () => {
+  console.log(`Web service listening on port 8080`);
+});
